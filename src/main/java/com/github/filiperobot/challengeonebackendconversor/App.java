@@ -5,10 +5,7 @@
 package com.github.filiperobot.challengeonebackendconversor;
 
 import com.github.filiperobot.challengeonebackendconversor.controllers.AppController;
-import com.github.filiperobot.challengeonebackendconversor.views.ConversorDeMoedas;
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
+import com.github.filiperobot.challengeonebackendconversor.views.ConversorDeMoedasView;
 
 /**
  *
@@ -18,6 +15,9 @@ import javax.swing.ImageIcon;
 public class App extends javax.swing.JFrame {
 
     private final AppController appController;
+
+    // TODO ativar(true) para ambiente de desenvolvimento, desativar(false) para uso normal do programa
+    private final boolean DEV = true;
     /**
      * Creates new form App
      */
@@ -121,23 +121,27 @@ public class App extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        appController.fechar();
+        appController.fechar(this.DEV);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void openMenuItemConversorDeMoedasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemConversorDeMoedasActionPerformed
-        ConversorDeMoedas conversorDeMoedas = new ConversorDeMoedas();
+        ConversorDeMoedasView conversorDeMoedas = new ConversorDeMoedasView();
         this.desktopPane.add(conversorDeMoedas);
         conversorDeMoedas.setVisible(true);
         conversorDeMoedas.toFront();
     }//GEN-LAST:event_openMenuItemConversorDeMoedasActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        if (this.DEV){
+            appController.fechar(true);
+        }
         appController.fecharApp(this);
     }//GEN-LAST:event_formWindowClosing
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO: APENAS DURANDO O DESENVOLVIMENTO, apagar esse metodo quando terminar de desenvolver a aplicação
-        //openMenuItemConversorDeMoedasActionPerformed(new java.awt.event.ActionEvent(this, 0, null));
+        if (this.DEV){
+            openMenuItemConversorDeMoedasActionPerformed(new java.awt.event.ActionEvent(this, 0, null));
+        }
     }//GEN-LAST:event_formWindowOpened
 
     /**

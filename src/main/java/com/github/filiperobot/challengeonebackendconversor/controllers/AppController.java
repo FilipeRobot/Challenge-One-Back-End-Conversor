@@ -5,26 +5,30 @@
 package com.github.filiperobot.challengeonebackendconversor.controllers;
 
 import com.github.filiperobot.challengeonebackendconversor.views.componests.OptionPane;
+
 import javax.swing.JFrame;
 
 /**
- *
  * @author FilipeRobot
  * @GitHub <a href="https://github.com/FilipeRobot">GitHub Profile</a>
  */
-public class AppController extends Controller{
+public class AppController extends Controller {
     @Override
-    public void fechar() {
-        // TODO: COMENTARIO APENAS DURANDO O DESENVOLVIMENTO, Descomentar if quando terminar
-        if (OptionPane.yesNo("Você realmente deseja fechar a aplicação?",
-                "Confirmação de saida",
-                OptionPane.QUESTION_MESSAGE) > 0) {
-            return;
+    public void fechar(boolean dev) {
+        if (dev) {
+            System.exit(0);
+        } else {
+            if (OptionPane.yesNo("Você realmente deseja fechar a aplicação?",
+                    "Confirmação de saida",
+                    OptionPane.QUESTION_MESSAGE) > 0) {
+                return;
+            }
+
+            System.exit(0);
         }
-        System.exit(0);
     }
-    
-    public void fecharApp(JFrame app){
+
+    public void fecharApp(JFrame app) {
         if (OptionPane.yesNo("Você realmente deseja fechar a aplicação?",
                 "Confirmação de saida",
                 OptionPane.QUESTION_MESSAGE) > 0) {
@@ -34,6 +38,6 @@ public class AppController extends Controller{
         OptionPane.okMessage("Programa finalizado");
         System.exit(0);
     }
-    
+
 
 }

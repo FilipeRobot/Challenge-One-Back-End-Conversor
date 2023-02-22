@@ -16,7 +16,7 @@ public abstract class Controller {
     private String fechaTitle = "Confirmar fechamento de ";
     private String fechaMessage = "Você realmente deseja fechar o ";
 
-    public void fechar() {
+    public void fechar(boolean dev) {
         System.exit(0);
     }
 
