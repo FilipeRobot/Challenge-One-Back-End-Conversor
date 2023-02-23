@@ -57,17 +57,23 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
+
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
+
             public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameClosing(evt);
             }
+
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
+
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
             }
+
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
+
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameOpened(evt);
             }
@@ -76,7 +82,7 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
         jLabelTipoConversao.setLabelFor(jComboBoxTipoDeMoeda);
         jLabelTipoConversao.setText("Qual o tipo de moedas você deseja converter?");
 
-        jComboBoxTipoDeMoeda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Real para Dolar", "Real para Euro", "Real para Libras Esterlinas", "Real para Peso Argentino", "Real para Peso Chileno", "Dolar para Real", "Euro para Real", "Libras Esterlinas para Real", "Peso Argentino para Real", "Peso Chileno para Real" }));
+        jComboBoxTipoDeMoeda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Real para Dolar", "Real para Euro", "Real para Libras Esterlinas", "Real para Peso Argentino", "Real para Peso Chileno", "Dolar para Real", "Euro para Real", "Libras Esterlinas para Real", "Peso Argentino para Real", "Peso Chileno para Real"}));
         jComboBoxTipoDeMoeda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxTipoDeMoedaActionPerformed(evt);
@@ -132,103 +138,103 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jButtonConverter, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jCheckBoxCotacaoPadrao))
-                .addGap(0, 18, Short.MAX_VALUE))
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(21, 21, 21)
+                                                .addComponent(jButtonConverter, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jCheckBoxCotacaoPadrao))
+                                .addGap(0, 18, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jCheckBoxCotacaoPadrao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonConverter)
-                .addGap(0, 11, Short.MAX_VALUE))
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jCheckBoxCotacaoPadrao)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButtonConverter)
+                                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabelValorConvertido)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldValorConvertido, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonCopiarTudo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonCopiarValor))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabelValorCotacao)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextFieldValorCotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabelValorParaConversao)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextFieldValorParaConversao))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabelTipoConversao)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jComboBoxTipoDeMoeda, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 16, Short.MAX_VALUE))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabelValorConvertido)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jTextFieldValorConvertido, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(jButtonCopiarTudo)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(jButtonCopiarValor))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                                .addComponent(jLabelValorCotacao)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                                .addComponent(jTextFieldValorCotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                                        .addComponent(jLabelValorParaConversao)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                        .addComponent(jTextFieldValorParaConversao))
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                                        .addComponent(jLabelTipoConversao)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                        .addComponent(jComboBoxTipoDeMoeda, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGap(0, 16, Short.MAX_VALUE))
+                                        .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTipoConversao)
-                    .addComponent(jComboBoxTipoDeMoeda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldValorParaConversao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelValorParaConversao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelValorCotacao)
-                            .addComponent(jTextFieldValorCotacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelValorConvertido)
-                    .addComponent(jTextFieldValorConvertido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCopiarValor)
-                    .addComponent(jButtonCopiarTudo))
-                .addContainerGap(17, Short.MAX_VALUE))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabelTipoConversao)
+                                        .addComponent(jComboBoxTipoDeMoeda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jTextFieldValorParaConversao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabelValorParaConversao))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(jLabelValorCotacao)
+                                                        .addComponent(jTextFieldValorCotacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(12, 12, 12)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabelValorConvertido)
+                                        .addComponent(jTextFieldValorConvertido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButtonCopiarValor)
+                                        .addComponent(jButtonCopiarTudo))
+                                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -285,76 +291,71 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
     }
 
     private void jButtonConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConverterActionPerformed
-        if (false) {
-            System.out.println("Ambiente de teste");
-            System.out.println(this.controller.converter("5,17", "10"));
-        } else {
-            final String itemSelecionado = Objects.requireNonNull(jComboBoxTipoDeMoeda.getSelectedItem()).toString();
-            String valorParaConversao = jTextFieldValorParaConversao.getText().trim();
-            String valorCotacao = jTextFieldValorCotacao.getText().trim();
+        final String itemSelecionado = Objects.requireNonNull(jComboBoxTipoDeMoeda.getSelectedItem()).toString();
+        String valorParaConversao = jTextFieldValorParaConversao.getText().trim();
+        String valorCotacao = jTextFieldValorCotacao.getText().trim();
 
-            if (jCheckBoxCotacaoPadrao.isSelected()) {
-                valorCotacao = controller.usarValorPadrao(itemSelecionado);
+        if (jCheckBoxCotacaoPadrao.isSelected()) {
+            valorCotacao = controller.usarValorPadrao(itemSelecionado);
+        }
+
+        try {
+            if ((valorParaConversao.isEmpty() || valorParaConversao.isBlank()) && (valorCotacao.isEmpty() || valorCotacao.isBlank())) {
+                throw new RuntimeException("Valor e cotação não foram informados");
             }
-            System.out.println(valorCotacao);
-            try {
-                if ((valorParaConversao.isEmpty() || valorParaConversao.isBlank()) && (valorCotacao.isEmpty() || valorCotacao.isBlank())) {
-                    throw new RuntimeException("Valor e cotação não foram informados");
-                }
-                if (valorParaConversao.isEmpty() || valorParaConversao.isBlank()) {
-                    throw new RuntimeException("Valor não informado");
-                }
-                if (valorCotacao.isEmpty() || valorCotacao.isBlank()) {
-                    throw new RuntimeException("Cotação não informada");
-                }
+            if (valorParaConversao.isEmpty() || valorParaConversao.isBlank()) {
+                throw new RuntimeException("Valor não informado");
+            }
+            if (valorCotacao.isEmpty() || valorCotacao.isBlank()) {
+                throw new RuntimeException("Cotação não informada");
+            }
 
 
-                if (!itemSelecionado.startsWith("Real para")) {
-                    // Adicionar R$ a conversão quando de outras moedas para real
-                    jTextFieldValorConvertido.setText("R$" + this.controller.converter(valorCotacao, valorParaConversao));
+            if (!itemSelecionado.startsWith("Real para")) {
+                // Adicionar R$ a conversão quando de outras moedas para real
+                jTextFieldValorConvertido.setText("R$" + this.controller.converter(valorCotacao, valorParaConversao));
+            } else {
+                // Adicionar simbulos de outras moedas quando a conversão é de real outra moeda
+                if (itemSelecionado.endsWith("Dolar")) {
+                    jTextFieldValorConvertido.setText("US$" + this.controller.converter(valorCotacao, valorParaConversao));
+                } else if (itemSelecionado.endsWith("Euro")) {
+                    jTextFieldValorConvertido.setText("€" + this.controller.converter(valorCotacao, valorParaConversao));
+                } else if (itemSelecionado.endsWith("Esterlinas")) {
+                    jTextFieldValorConvertido.setText("£" + this.controller.converter(valorCotacao, valorParaConversao));
                 } else {
-                    // Adicionar simbulos de outras moedas quando a conversão é de real outra moeda
-                    if (itemSelecionado.endsWith("Dolar")) {
-                        jTextFieldValorConvertido.setText("US$" + this.controller.converter(valorCotacao, valorParaConversao));
-                    } else if (itemSelecionado.endsWith("Euro")) {
-                        jTextFieldValorConvertido.setText("€" + this.controller.converter(valorCotacao, valorParaConversao));
-                    } else if (itemSelecionado.endsWith("Esterlinas")) {
-                        jTextFieldValorConvertido.setText("£" + this.controller.converter(valorCotacao, valorParaConversao));
-                    } else {
-                        jTextFieldValorConvertido.setText("$" + this.controller.converter(valorCotacao, valorParaConversao));
-                    }
+                    jTextFieldValorConvertido.setText("$" + this.controller.converter(valorCotacao, valorParaConversao));
                 }
-            } catch (RuntimeException e) {
-                jTextFieldValorConvertido.setText("");
-                e.printStackTrace();
-                OptionPane.erroMessage(e.getMessage());
             }
+        } catch (RuntimeException e) {
+            jTextFieldValorConvertido.setText("");
+            e.printStackTrace();
+            OptionPane.erroMessage(this, e.getMessage());
         }
     }//GEN-LAST:event_jButtonConverterActionPerformed
 
     private void jButtonCopiarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCopiarValorActionPerformed
         try {
             if (jTextFieldValorConvertido.getText().trim().isEmpty() || jTextFieldValorConvertido.getText().trim().isBlank()) {
-                OptionPane.erroMessage("Nenhum valor para copiar");
+                OptionPane.erroMessage(this, "Nenhum valor para copiar");
                 return;
             }
             controller.copiar(jTextFieldValorConvertido.getText());
-            OptionPane.okMessage("Texto copiado com sucesso!");
+            OptionPane.okMessage(this, "Texto copiado com sucesso!");
         } catch (Exception exception) {
-            OptionPane.erroMessage(exception.getMessage());
+            OptionPane.erroMessage(this, exception.getMessage());
         }
     }//GEN-LAST:event_jButtonCopiarValorActionPerformed
 
     private void jButtonCopiarTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCopiarTudoActionPerformed
         try {
             if (jTextFieldValorConvertido.getText().trim().isEmpty() || jTextFieldValorConvertido.getText().trim().isBlank()) {
-                OptionPane.erroMessage("Nenhum valor para copiar");
+                OptionPane.erroMessage(this, "Nenhum valor para copiar");
                 return;
             }
             controller.copiarTudo(jTextFieldValorConvertido.getText());
-            OptionPane.okMessage("Texto copiado com sucesso!");
+            OptionPane.okMessage(this, "Texto copiado com sucesso!");
         } catch (Exception exception) {
-            OptionPane.erroMessage(exception.getMessage());
+            OptionPane.erroMessage(this, exception.getMessage());
         }
     }//GEN-LAST:event_jButtonCopiarTudoActionPerformed
 

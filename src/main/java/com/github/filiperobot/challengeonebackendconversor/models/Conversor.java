@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class Conversor {
-    public String dinheiro(Double valor, Double cotacao){
+    public String dinheiro(Double valor, Double cotacao) {
         BigDecimal newValor = new BigDecimal(valor);
         BigDecimal newCotacao = new BigDecimal(cotacao);
 

@@ -7,11 +7,9 @@ package com.github.filiperobot.challengeonebackendconversor.controllers;
 import com.github.filiperobot.challengeonebackendconversor.services.ConversorDeMoedasService;
 
 import javax.swing.JInternalFrame;
-import java.awt.*;
+import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * @author FilipeRobot
@@ -19,15 +17,6 @@ import java.util.List;
  */
 public class ConversorDeMoedasController extends Controller {
     private final ConversorDeMoedasService conversorDeMoedasService;
-    private static final int BRL = 0;
-
-    private final List<String> listaDeConversoesPadrao = Arrays.asList(
-            "Real para Dolar",
-            "Real para Euro",
-            "Real para Libras Esterlinas",
-            "Real para Peso Argentino",
-            "Real para Peso Chileno"
-    );
 
     public ConversorDeMoedasController() {
         this.conversorDeMoedasService = new ConversorDeMoedasService();

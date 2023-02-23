@@ -7,21 +7,20 @@ package com.github.filiperobot.challengeonebackendconversor;
 import com.github.filiperobot.challengeonebackendconversor.controllers.AppController;
 import com.github.filiperobot.challengeonebackendconversor.views.ConversorDeMoedasView;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JInternalFrame;
+import java.awt.Dimension;
 
 /**
- *
  * @author FilipeRobot
  * @GitHub <a href="https://github.com/FilipeRobot">GitHub Profile</a>
  */
 public class App extends javax.swing.JFrame {
 
     private final AppController appController;
-//    private javax.swing.JInternalFrame conversorDeMoedas = new ConversorDeMoedasView();;
 
     // TODO ativar(true) para ambiente de desenvolvimento, desativar(false) para uso normal do programa
-    private final boolean DEV = true;
+    private final boolean DEV = false;
+
     /**
      * Creates new form App
      */
@@ -58,6 +57,7 @@ public class App extends javax.swing.JFrame {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
+
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -113,19 +113,19 @@ public class App extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        appController.fechar(this.DEV);
+        this.formWindowClosing(null);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void openMenuItemConversorDeMoedasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemConversorDeMoedasActionPerformed
@@ -133,29 +133,26 @@ public class App extends javax.swing.JFrame {
 
         this.colocarNoCentro(conversorDeMoedas);
 
-//        Dimension desktopPaneSize = this.desktopPane.getSize();
-//        Dimension jInternalFrameSize = conversorDeMoedas.getSize();
-//        conversorDeMoedas.setLocation((desktopPaneSize.width - jInternalFrameSize.width)/2, (desktopPaneSize.height - jInternalFrameSize.height)/2);
-
         this.desktopPane.add(conversorDeMoedas);
         conversorDeMoedas.setVisible(true);
         conversorDeMoedas.toFront();
     }//GEN-LAST:event_openMenuItemConversorDeMoedasActionPerformed
 
-    private void colocarNoCentro(javax.swing.JInternalFrame internalFrame){
+    private void colocarNoCentro(JInternalFrame internalFrame) {
         Dimension desktopPaneSize = this.desktopPane.getSize();
         Dimension jInternalFrameSize = internalFrame.getSize();
-        internalFrame.setLocation((desktopPaneSize.width - jInternalFrameSize.width)/2, (desktopPaneSize.height - jInternalFrameSize.height)/2);
+        internalFrame.setLocation((desktopPaneSize.width - jInternalFrameSize.width) / 2, (desktopPaneSize.height - jInternalFrameSize.height) / 2);
     }
+
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        if (this.DEV){
+        if (this.DEV) {
             appController.fechar(true);
         }
         appController.fecharApp(this);
     }//GEN-LAST:event_formWindowClosing
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        if (this.DEV){
+        if (this.DEV) {
             openMenuItemConversorDeMoedasActionPerformed(new java.awt.event.ActionEvent(this, 0, null));
         }
     }//GEN-LAST:event_formWindowOpened
@@ -167,7 +164,7 @@ public class App extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

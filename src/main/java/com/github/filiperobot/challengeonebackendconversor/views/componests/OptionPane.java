@@ -5,14 +5,14 @@
 package com.github.filiperobot.challengeonebackendconversor.views.componests;
 
 import javax.swing.JOptionPane;
+import java.awt.Component;
 
 /**
- *
  * @author FilipeRobot
  * @GitHub <a href="https://github.com/FilipeRobot">GitHub Profile</a>
  */
-public abstract class OptionPane extends JOptionPane{
-    public static int yesNo(String message, String title, int messageType){
+public abstract class OptionPane extends JOptionPane {
+    public static int yesNo(String message, String title, int messageType) {
         return JOptionPane.showConfirmDialog(null,
                 message,
                 title,
@@ -20,7 +20,7 @@ public abstract class OptionPane extends JOptionPane{
                 messageType);
     }
 
-    public static void erroMessage(String message){
+    public static void erroMessage(String message) {
         JOptionPane.showMessageDialog(
                 null,
                 message,
@@ -29,9 +29,27 @@ public abstract class OptionPane extends JOptionPane{
         );
     }
 
-    public static void okMessage(String message){
+    public static void erroMessage(Component parentComponent, String message) {
+        JOptionPane.showMessageDialog(
+                parentComponent,
+                message,
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+        );
+    }
+
+    public static void okMessage(String message) {
         JOptionPane.showMessageDialog(
                 null,
+                message,
+                "Tudo certo!",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+    }
+
+    public static void okMessage(Component parentComponent, String message) {
+        JOptionPane.showMessageDialog(
+                parentComponent,
                 message,
                 "Tudo certo!",
                 JOptionPane.INFORMATION_MESSAGE

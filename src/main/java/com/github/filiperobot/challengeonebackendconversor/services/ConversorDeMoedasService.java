@@ -18,23 +18,23 @@ public class ConversorDeMoedasService {
 
         if (newCotacaoMoedaParaReal != null) {
             return newCotacaoMoedaParaReal;
-        };
+        }
 
         return valorPadraoDeRealParaMoeda(opcaoSelecionada);
     }
 
     private static String valorPadraoDeRealParaMoeda(String opcaoSelecionada) {
-        if (opcaoSelecionada.startsWith("Real")){
-            if (opcaoSelecionada.endsWith("Euro")){
+        if (opcaoSelecionada.startsWith("Real")) {
+            if (opcaoSelecionada.endsWith("Euro")) {
                 return "0.18";
             }
-            if (opcaoSelecionada.endsWith("Esterlinas")){
+            if (opcaoSelecionada.endsWith("Esterlinas")) {
                 return "0.16";
             }
-            if (opcaoSelecionada.endsWith("Argentino")){
+            if (opcaoSelecionada.endsWith("Argentino")) {
                 return "37.75";
             }
-            if (opcaoSelecionada.endsWith("Chileno")){
+            if (opcaoSelecionada.endsWith("Chileno")) {
                 return "155.00";
             }
         }
@@ -43,7 +43,7 @@ public class ConversorDeMoedasService {
     }
 
     private static String valorPadraoDeMoedaParaReal(String opcaoSelecionada) {
-        if (opcaoSelecionada.startsWith("Dolar")){
+        if (opcaoSelecionada.startsWith("Dolar")) {
             return "5.16";
         }
 

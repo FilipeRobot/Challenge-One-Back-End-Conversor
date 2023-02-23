@@ -23,7 +23,7 @@ public class AppController extends Controller {
                     OptionPane.QUESTION_MESSAGE) > 0) {
                 return;
             }
-
+            OptionPane.okMessage("Programa finalizado");
             System.exit(0);
         }
     }

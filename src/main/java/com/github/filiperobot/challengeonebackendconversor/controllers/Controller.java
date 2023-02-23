@@ -5,10 +5,10 @@
 package com.github.filiperobot.challengeonebackendconversor.controllers;
 
 import com.github.filiperobot.challengeonebackendconversor.views.componests.OptionPane;
+
 import javax.swing.JInternalFrame;
 
 /**
- *
  * @author FilipeRobot
  * @GitHub <a href="https://github.com/FilipeRobot">GitHub Profile</a>
  */
