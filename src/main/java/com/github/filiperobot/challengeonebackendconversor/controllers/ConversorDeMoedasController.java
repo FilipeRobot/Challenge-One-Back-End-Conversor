@@ -103,12 +103,7 @@ public class ConversorDeMoedasController extends Controller {
         }
     }
 
-    public String usarValorPadrao(String item) {
-        for (int i = 0; i < listaDeConversoesPadrao.size(); i++) {
-            if (item.equals(listaDeConversoesPadrao.get(i))) {
-                return this.conversorDeMoedasService.getValorPadrao(i + 1);
-            }
-        }
-        return this.conversorDeMoedasService.getValorPadrao(BRL);
+    public String usarValorPadrao(String opcaoSelecionada) {
+        return this.conversorDeMoedasService.getValorPadrao(opcaoSelecionada);
     }
 }

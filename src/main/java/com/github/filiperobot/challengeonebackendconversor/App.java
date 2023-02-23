@@ -7,6 +7,9 @@ package com.github.filiperobot.challengeonebackendconversor;
 import com.github.filiperobot.challengeonebackendconversor.controllers.AppController;
 import com.github.filiperobot.challengeonebackendconversor.views.ConversorDeMoedasView;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  *
  * @author FilipeRobot
@@ -15,6 +18,7 @@ import com.github.filiperobot.challengeonebackendconversor.views.ConversorDeMoed
 public class App extends javax.swing.JFrame {
 
     private final AppController appController;
+//    private javax.swing.JInternalFrame conversorDeMoedas = new ConversorDeMoedasView();;
 
     // TODO ativar(true) para ambiente de desenvolvimento, desativar(false) para uso normal do programa
     private final boolean DEV = true;
@@ -126,11 +130,23 @@ public class App extends javax.swing.JFrame {
 
     private void openMenuItemConversorDeMoedasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemConversorDeMoedasActionPerformed
         ConversorDeMoedasView conversorDeMoedas = new ConversorDeMoedasView();
+
+        this.colocarNoCentro(conversorDeMoedas);
+
+//        Dimension desktopPaneSize = this.desktopPane.getSize();
+//        Dimension jInternalFrameSize = conversorDeMoedas.getSize();
+//        conversorDeMoedas.setLocation((desktopPaneSize.width - jInternalFrameSize.width)/2, (desktopPaneSize.height - jInternalFrameSize.height)/2);
+
         this.desktopPane.add(conversorDeMoedas);
         conversorDeMoedas.setVisible(true);
         conversorDeMoedas.toFront();
     }//GEN-LAST:event_openMenuItemConversorDeMoedasActionPerformed
 
+    private void colocarNoCentro(javax.swing.JInternalFrame internalFrame){
+        Dimension desktopPaneSize = this.desktopPane.getSize();
+        Dimension jInternalFrameSize = internalFrame.getSize();
+        internalFrame.setLocation((desktopPaneSize.width - jInternalFrameSize.width)/2, (desktopPaneSize.height - jInternalFrameSize.height)/2);
+    }
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         if (this.DEV){
             appController.fechar(true);
