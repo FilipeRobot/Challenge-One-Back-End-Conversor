@@ -25,12 +25,12 @@ programa de conversão.
 
 <div align="center">
    <p>
-        <img src="./GitHubFiles/img/demostracaoDoPrograma_ConversorDeMoedas.gif"
+        <img src="./assets/img/demostracaoDoPrograma_ConversorDeMoedas.gif"
             width="460"
             height="300"
             title="Conversor de Moedas"
             alt="Uma demostração do projeto rodando e executando o conversor de moedas">
     </p>
     <p>Depois de confirmar que deseja finalizar a aplicação</p>
-    <p><img src="./GitHubFiles/img/programa_finalizado_com_sucesso.jpg" width="260" height="150"></p>
+    <p><img src="./assets/img/programa_finalizado_com_sucesso.jpg" width="260" height="150"></p>
 </div>
