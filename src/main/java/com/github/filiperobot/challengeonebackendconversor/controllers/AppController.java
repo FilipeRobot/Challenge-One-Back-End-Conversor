@@ -38,6 +38,4 @@ public class AppController extends Controller {
         OptionPane.okMessage("Programa finalizado");
         System.exit(0);
     }
-
-
 }
