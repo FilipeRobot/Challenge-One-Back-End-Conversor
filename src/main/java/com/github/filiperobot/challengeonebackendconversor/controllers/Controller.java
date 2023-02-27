@@ -28,4 +28,8 @@ public abstract class Controller {
         }
         internalFrame.dispose();
     }
+
+    public boolean testaStringVazia(String texto) {
+        return texto.isEmpty() || texto.isBlank();
+    }
 }

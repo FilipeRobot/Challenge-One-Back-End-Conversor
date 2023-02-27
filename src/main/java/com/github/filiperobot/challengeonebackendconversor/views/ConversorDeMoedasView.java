@@ -7,6 +7,7 @@ package com.github.filiperobot.challengeonebackendconversor.views;
 import com.github.filiperobot.challengeonebackendconversor.controllers.ConversorDeMoedasController;
 import com.github.filiperobot.challengeonebackendconversor.views.componests.OptionPane;
 
+import javax.swing.*;
 import java.util.Objects;
 
 /**
@@ -334,11 +335,9 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonConverterActionPerformed
 
     private void jButtonCopiarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCopiarValorActionPerformed
+        if (controller.testaTextoParaCopiar(jTextFieldValorConvertido, this)) return;
+
         try {
-            if (jTextFieldValorConvertido.getText().trim().isEmpty() || jTextFieldValorConvertido.getText().trim().isBlank()) {
-                OptionPane.erroMessage(this, "Nenhum valor para copiar");
-                return;
-            }
             controller.copiar(jTextFieldValorConvertido.getText());
             OptionPane.okMessage(this, "Texto copiado com sucesso!");
         } catch (Exception exception) {
@@ -347,11 +346,9 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonCopiarValorActionPerformed
 
     private void jButtonCopiarTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCopiarTudoActionPerformed
+        if (controller.testaTextoParaCopiar(jTextFieldValorConvertido, this)) return;
+
         try {
-            if (jTextFieldValorConvertido.getText().trim().isEmpty() || jTextFieldValorConvertido.getText().trim().isBlank()) {
-                OptionPane.erroMessage(this, "Nenhum valor para copiar");
-                return;
-            }
             controller.copiarTudo(jTextFieldValorConvertido.getText());
             OptionPane.okMessage(this, "Texto copiado com sucesso!");
         } catch (Exception exception) {

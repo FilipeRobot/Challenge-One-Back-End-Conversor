@@ -5,8 +5,9 @@
 package com.github.filiperobot.challengeonebackendconversor.controllers;
 
 import com.github.filiperobot.challengeonebackendconversor.services.ConversorDeMoedasService;
+import com.github.filiperobot.challengeonebackendconversor.views.componests.OptionPane;
 
-import javax.swing.JInternalFrame;
+import javax.swing.*;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
@@ -94,5 +95,14 @@ public class ConversorDeMoedasController extends Controller {
 
     public String usarValorPadrao(String opcaoSelecionada) {
         return this.conversorDeMoedasService.getValorPadrao(opcaoSelecionada);
+    }
+
+    public boolean testaTextoParaCopiar(JTextField textField, JInternalFrame conversorView) {
+        String texto = textField.getText().trim();
+        if (super.testaStringVazia(texto)) {
+            OptionPane.erroMessage(conversorView, "Nenhum valor para copiar");
+            return true;
+        }
+        return false;
     }
 }
