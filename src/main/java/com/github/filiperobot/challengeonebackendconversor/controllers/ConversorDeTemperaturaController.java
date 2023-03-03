@@ -8,7 +8,6 @@ import com.github.filiperobot.challengeonebackendconversor.services.ConversorDeT
 
 import javax.swing.*;
 import java.text.DecimalFormat;
-import java.util.Collection;
 
 /**
  * @author FilipeRobot
@@ -28,12 +27,6 @@ public class ConversorDeTemperaturaController extends Controller {
         super.fechaComponente(conversorDeTemperatura);
     }
 
-//    public void limparCampos(Collection<JTextField> textFields) {
-//        textFields.forEach(textField -> {
-//            textField.setText("");
-//        });
-//    }
-
     public void converterCelsius(String inputCelsius) {
         if (inputCelsius.equals("-")) return;
         try {
@@ -44,7 +37,7 @@ public class ConversorDeTemperaturaController extends Controller {
         }
 
         fahrenheit = decimalFormat.format(conversorDeTemperaturaService.getFahrenheit());
-        kelvin = decimalFormat.format(conversorDeTemperaturaService.getKelvin());
+        kelvin = (conversorDeTemperaturaService.getKelvin() == 0.0) ? "0" : decimalFormat.format(conversorDeTemperaturaService.getKelvin());
     }
 
     public void converterFahrenheit(String inputFahrenheit) {
@@ -57,10 +50,14 @@ public class ConversorDeTemperaturaController extends Controller {
         }
 
         celsius = decimalFormat.format(conversorDeTemperaturaService.getCelsius());
-        kelvin = decimalFormat.format(conversorDeTemperaturaService.getKelvin());
+        kelvin = (conversorDeTemperaturaService.getKelvin() == 0.0) ? "0" : decimalFormat.format(conversorDeTemperaturaService.getKelvin());
     }
 
     public void converterKelvin(String inputKelvin) {
+        if (inputKelvin.startsWith("-")) {
+            throw new RuntimeException("Não existem valores menores que \"0\" na escala Kelvin de temperatura, tente novamente");
+        }
+
         try {
             inputKelvin = mudarSeparadorNumerico(inputKelvin, '.');
             conversorDeTemperaturaService.converterKelvin(Double.parseDouble(inputKelvin));

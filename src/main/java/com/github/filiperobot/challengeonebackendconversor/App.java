@@ -21,7 +21,7 @@ public class App extends javax.swing.JFrame {
     private final AppController appController;
 
     // TODO ativar(true) para ambiente de desenvolvimento, desativar(false) para uso normal do programa
-    private final boolean DEV = true;
+    private final boolean DEV = false;
 
     /**
      * Creates new form App
