@@ -7,6 +7,9 @@ package com.github.filiperobot.challengeonebackendconversor.controllers;
 import com.github.filiperobot.challengeonebackendconversor.views.componests.OptionPane;
 
 import javax.swing.JInternalFrame;
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 
 /**
  * @author FilipeRobot
@@ -29,7 +32,27 @@ public abstract class Controller {
         internalFrame.dispose();
     }
 
+    public String mudarSeparadorNumerico(String s, char novoSeparador) {
+        if (novoSeparador == ',') {
+            return s.replace('.', novoSeparador);
+        } else {
+            return s.replace(',', novoSeparador);
+        }
+    }
+
+    public void copiar(String texto) {
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        StringSelection stringSelection = new StringSelection(texto);
+        clipboard.setContents(stringSelection, stringSelection);
+    }
+
     public boolean testaStringVazia(String texto) {
         return texto.isEmpty() || texto.isBlank();
+    }
+
+    public void testaTextoParaCopiar(String texto) {
+        if (testaStringVazia(texto.trim())) {
+            throw new RuntimeException("Nenhum valor para copiar");
+        }
     }
 }

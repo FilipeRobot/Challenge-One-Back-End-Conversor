@@ -6,6 +6,8 @@ package com.github.filiperobot.challengeonebackendconversor;
 
 import com.github.filiperobot.challengeonebackendconversor.controllers.AppController;
 import com.github.filiperobot.challengeonebackendconversor.views.ConversorDeMoedasView;
+import com.github.filiperobot.challengeonebackendconversor.views.ConversorDeTemperaturaView;
+import com.github.filiperobot.challengeonebackendconversor.views.componests.JFrameAboutMenuInformations;
 
 import javax.swing.JInternalFrame;
 import java.awt.Dimension;
@@ -19,7 +21,7 @@ public class App extends javax.swing.JFrame {
     private final AppController appController;
 
     // TODO ativar(true) para ambiente de desenvolvimento, desativar(false) para uso normal do programa
-    private final boolean DEV = false;
+    private final boolean DEV = true;
 
     /**
      * Creates new form App
@@ -42,13 +44,12 @@ public class App extends javax.swing.JFrame {
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         exitMenuItem = new javax.swing.JMenuItem();
         conversoresMenu = new javax.swing.JMenu();
-        openMenuItemConversorDeMoedas = new javax.swing.JMenuItem();
+        MenuItemConversorDeMoedas = new javax.swing.JMenuItem();
+        MenuItemConversorDeTemperatura = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -65,9 +66,6 @@ public class App extends javax.swing.JFrame {
 
         fileMenu.setMnemonic('a');
         fileMenu.setText("Arquivo");
-
-        jMenuItem1.setText("jMenuItem1");
-        fileMenu.add(jMenuItem1);
         fileMenu.add(jSeparator1);
 
         exitMenuItem.setMnemonic('x');
@@ -84,26 +82,35 @@ public class App extends javax.swing.JFrame {
         conversoresMenu.setMnemonic('c');
         conversoresMenu.setText("Conversores");
 
-        openMenuItemConversorDeMoedas.setMnemonic('m');
-        openMenuItemConversorDeMoedas.setText("Conversor de Moedas");
-        openMenuItemConversorDeMoedas.addActionListener(new java.awt.event.ActionListener() {
+        MenuItemConversorDeMoedas.setMnemonic('m');
+        MenuItemConversorDeMoedas.setText("Conversor de Moedas");
+        MenuItemConversorDeMoedas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openMenuItemConversorDeMoedasActionPerformed(evt);
+                MenuItemConversorDeMoedasActionPerformed(evt);
             }
         });
-        conversoresMenu.add(openMenuItemConversorDeMoedas);
+        conversoresMenu.add(MenuItemConversorDeMoedas);
+
+        MenuItemConversorDeTemperatura.setText("Conversor de temperatura");
+        MenuItemConversorDeTemperatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemConversorDeTemperaturaActionPerformed(evt);
+            }
+        });
+        conversoresMenu.add(MenuItemConversorDeTemperatura);
 
         menuBar.add(conversoresMenu);
 
         helpMenu.setMnemonic('h');
-        helpMenu.setText("Help");
-
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
+        helpMenu.setText("Ajuda");
 
         aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
+        aboutMenuItem.setText("Sobre");
+        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMenuItemActionPerformed(evt);
+            }
+        });
         helpMenu.add(aboutMenuItem);
 
         menuBar.add(helpMenu);
@@ -128,7 +135,7 @@ public class App extends javax.swing.JFrame {
         this.formWindowClosing(null);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void openMenuItemConversorDeMoedasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemConversorDeMoedasActionPerformed
+    private void MenuItemConversorDeMoedasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemConversorDeMoedasActionPerformed
         ConversorDeMoedasView conversorDeMoedas = new ConversorDeMoedasView();
 
         this.colocarNoCentro(conversorDeMoedas);
@@ -136,7 +143,7 @@ public class App extends javax.swing.JFrame {
         this.desktopPane.add(conversorDeMoedas);
         conversorDeMoedas.setVisible(true);
         conversorDeMoedas.toFront();
-    }//GEN-LAST:event_openMenuItemConversorDeMoedasActionPerformed
+    }//GEN-LAST:event_MenuItemConversorDeMoedasActionPerformed
 
     private void colocarNoCentro(JInternalFrame internalFrame) {
         Dimension desktopPaneSize = this.desktopPane.getSize();
@@ -153,9 +160,26 @@ public class App extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if (this.DEV) {
-            openMenuItemConversorDeMoedasActionPerformed(new java.awt.event.ActionEvent(this, 0, null));
+//            MenuItemConversorDeMoedasActionPerformed(null);
+            MenuItemConversorDeTemperaturaActionPerformed(null);
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+        JFrameAboutMenuInformations frame = new JFrameAboutMenuInformations();
+        frame.setLocationRelativeTo(this);
+        frame.setVisible(true);
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
+
+    private void MenuItemConversorDeTemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemConversorDeTemperaturaActionPerformed
+        ConversorDeTemperaturaView conversorDeTemperatura = new ConversorDeTemperaturaView();
+
+        this.colocarNoCentro(conversorDeTemperatura);
+
+        this.desktopPane.add(conversorDeTemperatura);
+        conversorDeTemperatura.setVisible(true);
+        conversorDeTemperatura.toFront();
+    }//GEN-LAST:event_MenuItemConversorDeTemperaturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,17 +218,16 @@ public class App extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MenuItemConversorDeMoedas;
+    private javax.swing.JMenuItem MenuItemConversorDeTemperatura;
     private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenu conversoresMenu;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem openMenuItemConversorDeMoedas;
     // End of variables declaration//GEN-END:variables
 
 }

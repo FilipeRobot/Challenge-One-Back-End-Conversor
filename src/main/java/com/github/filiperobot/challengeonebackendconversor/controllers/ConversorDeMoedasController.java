@@ -8,9 +8,9 @@ import com.github.filiperobot.challengeonebackendconversor.services.ConversorDeM
 import com.github.filiperobot.challengeonebackendconversor.views.componests.OptionPane;
 
 import javax.swing.*;
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
+//import java.awt.Toolkit;
+//import java.awt.datatransfer.Clipboard;
+//import java.awt.datatransfer.StringSelection;
 
 /**
  * @author FilipeRobot
@@ -27,7 +27,7 @@ public class ConversorDeMoedasController extends Controller {
         super.fechaComponente(conversorDeMoedas);
     }
 
-    public void copiar(String texto) {
+    public void copiarSemSimbolo(String texto) {
         if (texto.startsWith("R$")) {
             // remover R$ do texto
             texto = texto.replace("R$", "");
@@ -52,16 +52,7 @@ public class ConversorDeMoedasController extends Controller {
             // Remover "€" do texto
             texto = texto.replace("$", "");
         }
-
-        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-        StringSelection stringSelection = new StringSelection(texto);
-        clipboard.setContents(stringSelection, stringSelection);
-    }
-
-    public void copiarTudo(String texto) {
-        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-        StringSelection stringSelection = new StringSelection(texto);
-        clipboard.setContents(stringSelection, stringSelection);
+        super.copiar(texto);
     }
 
     public String converter(String cotacao, String valor) {
@@ -85,24 +76,7 @@ public class ConversorDeMoedasController extends Controller {
         return mudarSeparadorNumerico(conversorDeMoedasService.converter(newValor, newCotacao), ',');
     }
 
-    private String mudarSeparadorNumerico(String s, char novoSeparador) {
-        if (novoSeparador == ',') {
-            return s.replace('.', novoSeparador);
-        } else {
-            return s.replace(',', novoSeparador);
-        }
-    }
-
     public String usarValorPadrao(String opcaoSelecionada) {
         return this.conversorDeMoedasService.getValorPadrao(opcaoSelecionada);
-    }
-
-    public boolean testaTextoParaCopiar(JTextField textField, JInternalFrame conversorView) {
-        String texto = textField.getText().trim();
-        if (super.testaStringVazia(texto)) {
-            OptionPane.erroMessage(conversorView, "Nenhum valor para copiar");
-            return true;
-        }
-        return false;
     }
 }

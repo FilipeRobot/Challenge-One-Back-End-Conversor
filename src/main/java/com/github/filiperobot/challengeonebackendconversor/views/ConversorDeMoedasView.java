@@ -7,7 +7,6 @@ package com.github.filiperobot.challengeonebackendconversor.views;
 import com.github.filiperobot.challengeonebackendconversor.controllers.ConversorDeMoedasController;
 import com.github.filiperobot.challengeonebackendconversor.views.componests.OptionPane;
 
-import javax.swing.*;
 import java.util.Objects;
 
 /**
@@ -16,14 +15,14 @@ import java.util.Objects;
  */
 public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
 
-    private final ConversorDeMoedasController controller;
+    private final ConversorDeMoedasController conversorDeMoedasController;
 
     /**
      * Creates new form ConversorDeMoedas
      */
     public ConversorDeMoedasView() {
         initComponents();
-        this.controller = new ConversorDeMoedasController();
+        this.conversorDeMoedasController = new ConversorDeMoedasController();
     }
 
     /**
@@ -242,7 +241,7 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
-        controller.fechaConversorDeMoedas(this);
+        conversorDeMoedasController.fechaConversorDeMoedas(this);
     }//GEN-LAST:event_formInternalFrameClosing
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
@@ -297,7 +296,7 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
         String valorCotacao = jTextFieldValorCotacao.getText().trim();
 
         if (jCheckBoxCotacaoPadrao.isSelected()) {
-            valorCotacao = controller.usarValorPadrao(itemSelecionado);
+            valorCotacao = conversorDeMoedasController.usarValorPadrao(itemSelecionado);
         }
 
         try {
@@ -314,17 +313,17 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
 
             if (!itemSelecionado.startsWith("Real para")) {
                 // Adicionar R$ a conversão quando de outras moedas para real
-                jTextFieldValorConvertido.setText("R$" + this.controller.converter(valorCotacao, valorParaConversao));
+                jTextFieldValorConvertido.setText("R$" + this.conversorDeMoedasController.converter(valorCotacao, valorParaConversao));
             } else {
                 // Adicionar simbulos de outras moedas quando a conversão é de real outra moeda
                 if (itemSelecionado.endsWith("Dolar")) {
-                    jTextFieldValorConvertido.setText("US$" + this.controller.converter(valorCotacao, valorParaConversao));
+                    jTextFieldValorConvertido.setText("US$" + this.conversorDeMoedasController.converter(valorCotacao, valorParaConversao));
                 } else if (itemSelecionado.endsWith("Euro")) {
-                    jTextFieldValorConvertido.setText("€" + this.controller.converter(valorCotacao, valorParaConversao));
+                    jTextFieldValorConvertido.setText("€" + this.conversorDeMoedasController.converter(valorCotacao, valorParaConversao));
                 } else if (itemSelecionado.endsWith("Esterlinas")) {
-                    jTextFieldValorConvertido.setText("£" + this.controller.converter(valorCotacao, valorParaConversao));
+                    jTextFieldValorConvertido.setText("£" + this.conversorDeMoedasController.converter(valorCotacao, valorParaConversao));
                 } else {
-                    jTextFieldValorConvertido.setText("$" + this.controller.converter(valorCotacao, valorParaConversao));
+                    jTextFieldValorConvertido.setText("$" + this.conversorDeMoedasController.converter(valorCotacao, valorParaConversao));
                 }
             }
         } catch (RuntimeException e) {
@@ -335,10 +334,10 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonConverterActionPerformed
 
     private void jButtonCopiarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCopiarValorActionPerformed
-        if (controller.testaTextoParaCopiar(jTextFieldValorConvertido, this)) return;
-
         try {
-            controller.copiar(jTextFieldValorConvertido.getText());
+            conversorDeMoedasController.testaTextoParaCopiar(jTextFieldValorConvertido.getText());
+
+            conversorDeMoedasController.copiarSemSimbolo(jTextFieldValorConvertido.getText());
             OptionPane.okMessage(this, "Texto copiado com sucesso!");
         } catch (Exception exception) {
             OptionPane.erroMessage(this, exception.getMessage());
@@ -346,10 +345,10 @@ public class ConversorDeMoedasView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonCopiarValorActionPerformed
 
     private void jButtonCopiarTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCopiarTudoActionPerformed
-        if (controller.testaTextoParaCopiar(jTextFieldValorConvertido, this)) return;
-
         try {
-            controller.copiarTudo(jTextFieldValorConvertido.getText());
+            conversorDeMoedasController.testaTextoParaCopiar(jTextFieldValorConvertido.getText());
+
+            conversorDeMoedasController.copiar(jTextFieldValorConvertido.getText());
             OptionPane.okMessage(this, "Texto copiado com sucesso!");
         } catch (Exception exception) {
             OptionPane.erroMessage(this, exception.getMessage());
