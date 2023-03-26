@@ -34,3 +34,7 @@ programa de conversão.
     <p>Depois de confirmar que deseja finalizar a aplicação</p>
     <p><img src="./assets/img/programa_finalizado_com_sucesso.jpg" width="260" height="150"></p>
 </div>
+<hr>
+<div align="center">
+    <p><img src="./assets/img/Badge_de_conlusao_do_challenge.png" width="200" height="200"></p>
+</div>
